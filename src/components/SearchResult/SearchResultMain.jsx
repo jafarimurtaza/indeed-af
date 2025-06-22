@@ -4,9 +4,9 @@ import Link from "next/link";
 
 export default function SearchResultMain() {
   return (
-    <div className="bg-blue-300 w-full h-auto flex flex-col items-center">
+    <div className="bg-white w-full h-auto flex flex-col items-center">
       {/* Search Section */}
-      <div className="w-[90%] h-auto mt-14 border-2 border-black bg-white rounded-2xl flex items-center justify-between shadow-sm shadow-gray-900 p-4 ">
+      <div className="w-8/12 h-auto border-1 my-6 border-black bg-white rounded-2xl flex items-center justify-between shadow-sm shadow-gray-900 p-2">
         {/* Search Input */}
         <div className="flex items-center  w-1/2 gap-3">
           <FaSearch className="text-gray-700 text-xl" />
@@ -14,8 +14,7 @@ export default function SearchResultMain() {
             type="search"
             name="search"
             placeholder="Job title, keywords, or company"
-            value="full time"
-            className="w-full hover:bg-amber-200"
+            className="w-full p-4 placeholder:text-gray-600 outline-none text-gray-600 text-xl"
           />
         </div>
         <span className="flex justify-center items-center h-auto w-8">|</span>
@@ -27,18 +26,26 @@ export default function SearchResultMain() {
             type="search"
             name="location"
             placeholder="London, Greater London"
-            value="location"
-            className="w-full hover:bg-amber-700"
+            className="w-full p-4 placeholder:text-gray-600 outline-none text-xl text-gray-600"
           />
         </div>
 
         {/* Find Jobs Button */}
         <Link href="#">
-          <button className="bg-blue-700 text-white px-5 py-2 rounded-xl hover:bg-blue-800 w-32 ml-4">
+          <button className="bg-blue-700 text-white p-4 rounded-xl hover:bg-green-800 w-28 ml-4 font-bold">
             Find Jobs
           </button>
         </Link>
       </div>
+      {/* background section */}
+ <div className="bg-white w-full min-h-screen flex justify-center items-center">
+      <svg width="100" height="50">
+        <circle cx="50" cy="25" r="20" fill="green" />
+      </svg>
+</div>
+
+
+
     </div>
   );
 }
