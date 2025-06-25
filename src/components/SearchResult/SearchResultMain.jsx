@@ -62,7 +62,7 @@ export default function SearchResultMain() {
       {/* background section */}
       <div className="w-full bg-[#EEF1FF] py-16 flex justify-center">
         <img
-          src="/images/img.jpg"
+          src="/imges/img.jpg"
           className="w-auto  h-[300px] object-contain"
         />
       </div>
