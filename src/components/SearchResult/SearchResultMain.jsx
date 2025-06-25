@@ -5,8 +5,8 @@ import Link from "next/link";
 function JobsPost() {
   return (
     <div className="bg-white w-full min-h-screen">
-      <div className="bg-white flex justify-center gap-2 p-2 underline text-2xl font-bold text-blue-800">
-        <Link href="/#">Upload your CV</Link>
+      <div className="bg-white flex justify-center gap-2 p-2 text-2xl font-bold text-blue-800">
+        <Link href="/#" className="underline">Upload your CV</Link>
         <p className="font-semibold text-xl text-black">
           - It only takes a few seconds
         </p>
@@ -60,9 +60,9 @@ export default function SearchResultMain() {
         </Link>
       </div>
       {/* background section */}
-      <div className="w-full bg-[#EEF1FF] py-16 flex justify-center">
+      <div className="w-full bg-[#EEF1FF] pt-5 flex justify-center">
         <img
-          src="/imges/img.jpg"
+          src="/images/img.jpg"
           className="w-auto  h-[300px] object-contain"
         />
       </div>
