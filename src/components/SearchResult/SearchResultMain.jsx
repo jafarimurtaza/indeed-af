@@ -4,9 +4,11 @@ import Link from "next/link";
 
 function JobsPost() {
   return (
-    <div className="bg-white w-full min-h-screen">
+    <div className="bg-white w-full">
       <div className="bg-white flex justify-center gap-2 p-2 text-2xl font-bold text-blue-800">
-        <Link href="/#" className="underline">Upload your CV</Link>
+        <Link href="/#" className="underline">
+          Upload your CV
+        </Link>
         <p className="font-semibold text-xl text-black">
           - It only takes a few seconds
         </p>
@@ -14,11 +16,91 @@ function JobsPost() {
       <div className="bg-white flex justify-center text-2xl  mt-3 underline text-blue-800 font-bold">
         <Link href="/#">Post a job on Indeed</Link>
       </div>
-      {/* button  */}
-      <div className="bg-cyan-500 w-full min-h-screen flex justify-center mt-8">
-        <Link href="#">
-          <button type="button">What's trending Indeec</button>
-        </Link>
+    </div>
+  );
+}
+
+function JobsLists() {
+  return (
+    <div className="w-full text-2xl text-black flex flex-col justify-center items-center">
+      <Link href="#">
+        <button type="button" className="bg-amber-500 w-full h-auto mt-6">
+          What's trending on Indeed
+        </button>
+      </Link>
+      <div className="bg-white w-full text-xl font-bold text-black mt-8 flex justify-start pl-5 gap-4">
+        <div className="w-full">
+          <h2>Trending searches</h2>
+          <ul className="bg-white  text-blue-700 underline mt-5">
+            <Link href="#" className="flex flex-col gap-5 font-medium">
+              <li>castle donington de74</li>
+              <li>sponsorship available</li>
+              <li>abbotts ann sp11</li>
+              <li>maghull l31</li>
+              <li>whoberley cv1</li>
+            </Link>
+          </ul>
+        </div>
+        <div className="w-full">
+          <h2>Trending jobs</h2>
+          <ul className="bg-white  text-blue-700 underline mt-7">
+            <Link href="#" className="flex flex-col gap-5 font-medium">
+              <li>content creator remote</li>
+              <li>retail london</li>
+              <li>fully remote remote</li>
+              <li>part time england</li>
+              <li>finance remote</li>
+              <li>full time bristol</li>
+              <li>administration remote</li>
+              <li>project manager remote</li>
+              <li>communications remote</li>
+              <li>part time remote</li>
+              <li>graphic design remote</li>
+            </Link>
+          </ul>
+        </div>
+        <div className="w-full">
+          <h2>Popular cities</h2>
+          <ul className="bg-white  text-blue-700 underline mt-7">
+            <Link href="#" className="flex flex-col gap-5 font-medium">
+              <li>slough</li>
+              <li>london</li>
+              <li>carlisle</li>
+              <li>stafford</li>
+              <li>wrexham</li>
+              <li>birmingham</li>
+              <li>halifax telford</li>
+              <li>derby</li>
+              <li>cardiff</li>
+              <li> glasgow</li>
+              <li>tamworth</li>
+              <li> chester</li>
+              <li> newport</li>
+              <li> bournemouth</li>
+              <li> exeter</li>
+              <li>blackpool</li>
+              <li> croydon </li>
+            </Link>
+          </ul>
+        </div>
+        <div className="w-full">
+          <h2>Popular companies</h2>
+          <ul className="bg-white  text-blue-700 underline mt-7">
+            <Link href="#" className="flex flex-col gap-5 font-medium ">
+              <li>pets at home</li>
+              <li>holland %26 </li>
+              <li>h%26m</li>
+              <li>salesforce</li>
+              <li>whsmith</li>
+              <li>currys</li>
+              <li>iss facility services</li>
+              <li>the range</li>
+              <li>barrett</li>
+              <li> asda</li>
+              <li> b%26m</li>
+            </Link>
+          </ul>
+        </div>
       </div>
     </div>
   );
@@ -84,8 +166,8 @@ export default function SearchResultMain() {
             <FaArrowRight />
           </Link>
         </div>
-
         <JobsPost />
+        <JobsLists />
       </div>
     </div>
   );
