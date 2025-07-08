@@ -10,21 +10,10 @@
   },
   "dependencies": {
     "@react-icons/all-files": "^4.1.0",
-
     "next": "15.3.3",
-    "react": "^19.0.0",
-
-    "react-dom": "^19.0.0"
-
-    "next": "^15.3.3",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-icons": "^5.5.0"
->>>>>>> f6c7d5d (First commit)
-=======
-    "react-dom": "^19.0.0",
-    "react-icons": "^5.5.0"
->>>>>>> c83dffe3b67dfe74de0a6f9cde91e81c7bf17a66
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",

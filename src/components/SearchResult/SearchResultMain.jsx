@@ -1,6 +1,65 @@
 import React, { useState } from "react";
 import { FaSearch, FaMapMarkerAlt } from "react-icons/fa";
+import { FaArrowRight } from "react-icons/fa";
 import Link from "next/link";
+
+const DataLists = [
+  {
+    title: "Trending Searches",
+    items: [
+      "remote medical billing remote",
+      "part time city of atlanta, ga",
+      "city of detroit, mi",
+      "remote ohio",
+      "remote work from",
+      "home city of atlanta",
+      "server city of",
+      "atlanta, ga",
+      "hiring immediately",
+    ],
+  },
+  {
+    title: "Trending Jobs",
+    items: [
+      "part time tallahassee, fl",
+      "part time kearny mesa, ca",
+      "part time summerlin, nv",
+      "part time aurora, co",
+      "data entry clerk remote",
+      "urgently hiring remote",
+    ],
+  },
+  {
+    title: "Popular Cities",
+    items: [
+      "columbus, ga",
+      "indianapolis, in",
+      "dallas, tx",
+      "wilmington, nc",
+      "kansas city, mo",
+      "houston, tx",
+      "baltimore, md",
+      "vancouver, wa",
+      "knoxville, tn",
+    ],
+  },
+  {
+    title: "Popular Companies",
+    items: [
+      "goodwill",
+      "deloitte",
+      "cigna work at home",
+      "northwell health",
+      "walmart",
+      "walgreens",
+      "teleperformance",
+      "microsoft",
+      "apple",
+      "t mobile",
+      "tiktok",
+    ],
+  },
+];
 
 export default function SearchResultMain() {
   return (
@@ -32,20 +91,114 @@ export default function SearchResultMain() {
 
         {/* Find Jobs Button */}
         <Link href="#">
-          <button className="bg-blue-700 text-white p-4 rounded-xl hover:bg-green-800 w-28 ml-4 font-bold">
+          <button className="bg-[#2557a7] text-white p-4 rounded-xl  w-28 ml-4 font-bold">
             Find Jobs
           </button>
         </Link>
       </div>
       {/* background section */}
- <div className="bg-white w-full min-h-screen flex justify-center items-center">
-      <svg width="100" height="50">
-        <circle cx="50" cy="25" r="20" fill="green" />
-      </svg>
-</div>
+      <div className="bg-white w-full flex justify-center items-center flex-col">
+        <div className=" w-full flex justify-center mt-0 ">
+          <img src="/images/indeed.png" />
+        </div>
+        <h2 className="text-3xl text-black font-bold">
+          Your next job starts here
+        </h2>
+        <div className=" flex justify-center">
+          <p className="text-black text-xl p-3 w-full">
+            Create an account or sign in to see your personalized job
+            recommendations.
+          </p>
+        </div>
+        <div className="mt-5">
+          <Link
+            href="/get-started"
+            className="flex items-center gap-2 bg-[#2557a7] text-white font-semibold px-6 py-3 rounded-xl border transition w-56 justify-center "
+          >
+            Get started <FaArrowRight />
+          </Link>
+        </div>
 
-
-
+        <div className="mt-14 flex gap-2">
+          <Link href="#">
+            <span className="text-[#2557a7] font-bold text-l underline">
+              Post your resume
+            </span>
+          </Link>
+          <p className="text-normal text-black">-It only takes a few seconds</p>
+        </div>
+        <Link href="#">
+          <span className="text-[#2557a7] font-bold text-lg underline">
+            Post a job on Indeed
+          </span>
+        </Link>
+      </div>
+      <JobPosts />
+      <Joblists />
     </div>
   );
 }
+
+//////
+const JobPosts = () => {
+  return (
+    <div className="bg-white w-full mt-14">
+      <div className="flex justify-center">
+        <hr />
+        <p className="text-l fond-normal text-black">
+          Indeed helps people get jobs:
+        </p>
+        <Link href="#">
+          <span className="text-l font-normal text-[#2557a7] underline">
+            Over 16 million stories shared
+          </span>
+        </Link>
+      </div>
+      <div className="flex w-full justify-center mt-3 gap-1">
+        <p className="text-normal text-black">
+          Indeed también está disponible en{" "}
+        </p>
+        <Link href="#">
+          <span className="text-normal text-[#2557a7] underline">español</span>
+        </Link>
+      </div>
+    </div>
+  );
+};
+
+const Joblists = () => {
+  const [isTrendingOpen, setIsTrendingOpen] = useState(false);
+  return (
+    <div className="w-full text-black  flex-col items-center  flex justify-center mt-6">
+      <button className="bg-white w-fit h-auto">
+        <span
+          className="cursor-pointer text-l"
+          onClick={() => setIsTrendingOpen(!isTrendingOpen)}
+        >
+          What's trending on Indeed
+        </span>
+      </button>
+
+      {/* section list */}
+      {isTrendingOpen && (
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4  w-full p-14">
+          {DataLists.map((section, index) => (
+            <div key={index} className="text-black ">
+              <h2 className="font-bold text-xl mb-3">{section.title}</h2>
+              <ul className="space-y-2">
+                {section.items.map((item, idx) => (
+                  <li
+                    key={idx}
+                    className="text-[#2557a7] cursor-pointer underline"
+                  >
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+};
