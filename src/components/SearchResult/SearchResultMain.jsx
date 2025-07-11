@@ -3,7 +3,7 @@ import { FaSearch, FaMapMarkerAlt } from "react-icons/fa";
 import { FaArrowRight } from "react-icons/fa";
 import Link from "next/link";
 
-const DataLists = [
+const dataLists = [
   {
     title: "Trending Searches",
     items: [
@@ -65,9 +65,9 @@ export default function SearchResultMain() {
   return (
     <div className="bg-white w-full h-auto flex flex-col items-center">
       {/* Search Section */}
-      <div className="w-8/12 h-auto border-1 my-6 border-black bg-white rounded-2xl flex items-center justify-between shadow-sm shadow-gray-900 p-2">
+      <div className="w-8/12 md:w-10/12 lg:w-8/12 h-auto border-1 my-6 border-black bg-white rounded-2xl  flex flex-col md:flex-row shadow-sm shadow-gray-900 p-2">
         {/* Search Input */}
-        <div className="flex items-center  w-1/2 gap-3">
+        <div className="flex items-center  w-full gap-3 md:w-1/2 ">
           <FaSearch className="text-gray-700 text-xl" />
           <input
             type="search"
@@ -79,7 +79,7 @@ export default function SearchResultMain() {
         <span className="flex justify-center items-center h-auto w-8">|</span>
 
         {/* Location Input */}
-        <div className="flex items-center gap-2 text-black w-1/2">
+        <div className="flex items-center gap-2 text-black md:w-1/2 h-full">
           <FaMapMarkerAlt className="text-black text-lg" />
           <input
             type="search"
@@ -91,7 +91,7 @@ export default function SearchResultMain() {
 
         {/* Find Jobs Button */}
         <Link href="#">
-          <button className="bg-[#2557a7] text-white p-4 rounded-xl  w-28 ml-4 font-bold">
+          <button className="bg-[#2557a7] text-white p-4 rounded-xl w-full md:w-28 font-bold">
             Find Jobs
           </button>
         </Link>
@@ -181,9 +181,9 @@ const Joblists = () => {
 
       {/* section list */}
       {isTrendingOpen && (
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4  w-full p-14">
-          {DataLists.map((section, index) => (
-            <div key={index} className="text-black ">
+        <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4  w-full p-14">
+          {dataLists.map((section, index) => (
+            <li key={index} className="text-black ">
               <h2 className="font-bold text-xl mb-3">{section.title}</h2>
               <ul className="space-y-2">
                 {section.items.map((item, idx) => (
@@ -195,9 +195,9 @@ const Joblists = () => {
                   </li>
                 ))}
               </ul>
-            </div>
+            </li>
           ))}
-        </div>
+        </ul>
       )}
     </div>
   );
