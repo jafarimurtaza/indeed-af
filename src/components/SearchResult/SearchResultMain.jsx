@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { FaSearch, FaMapMarkerAlt } from "react-icons/fa";
+import { MdKeyboardArrowDown } from "react-icons/md";
 import { FaArrowRight } from "react-icons/fa";
 import Link from "next/link";
 
@@ -170,13 +171,14 @@ const Joblists = () => {
   const [isTrendingOpen, setIsTrendingOpen] = useState(false);
   return (
     <div className="w-full text-black  flex-col items-center  flex justify-center mt-6">
-      <button className="bg-white w-fit h-auto">
+      <button className="bg-white w-fit h-auto flex items-center gap-4"  onClick={() => setIsTrendingOpen(!isTrendingOpen)}>
         <span
           className="cursor-pointer text-l"
-          onClick={() => setIsTrendingOpen(!isTrendingOpen)}
+         
         >
           What's trending on Indeed
         </span>
+        <MdKeyboardArrowDown className={!isTrendingOpen ? 'rotate-180' : 'rotate-none'}/>
       </button>
 
       {/* section list */}
@@ -191,7 +193,13 @@ const Joblists = () => {
                     key={idx}
                     className="text-[#2557a7] cursor-pointer underline"
                   >
-                    {item}
+                    <Link
+                      href={`/searchresult/${item
+                        .replace(/[\s,]+/g, "_")
+                        .toLowerCase()}`}
+                    >
+                      {item}
+                    </Link>
                   </li>
                 ))}
               </ul>
