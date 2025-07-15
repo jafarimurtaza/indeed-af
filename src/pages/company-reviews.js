@@ -1,4 +1,4 @@
-import MainCompany from '@/components/Company-reviews/Main-Company'
+import MainCompany from '@/components/CompanyReviews/MainCompany'
 import React from 'react'
 
 export default function CompanyReviews() {
