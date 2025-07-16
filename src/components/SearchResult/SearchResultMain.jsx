@@ -4,6 +4,8 @@ import { MdKeyboardArrowDown } from "react-icons/md";
 import { FaArrowRight } from "react-icons/fa";
 import Link from "next/link";
 
+const input_style="w-full p-2 lg:p-4 placeholder:text-gray-600 outline-none text-gray-600 lg:text-xl text-sm";
+
 const dataLists = [
   {
     title: "Trending Searches",
@@ -64,20 +66,21 @@ const dataLists = [
 
 export default function SearchResultMain() {
   return (
-    <div className="bg-white w-full h-auto flex flex-col items-center">
+    <div className="bg-white w-full h-auto flex flex-col  p-3 items-center">
       {/* Search Section */}
-      <div className="w-8/12 md:w-10/12 lg:w-8/12 h-auto border-1 my-6 border-black bg-white rounded-2xl  flex flex-col md:flex-row shadow-sm shadow-gray-900 p-2">
+      <div className="w-full md:w-10/12 lg:w-8/12 h-auto border-1 my-6 border-black bg-white rounded-xl  
+      flex flex-col md:flex-row shadow-sm shadow-gray-900 p-2 lg:items-center lg:gap-4 gap-2">
         {/* Search Input */}
-        <div className="flex items-center  w-full gap-3 md:w-1/2 ">
+        <div className="flex items-center  w-full gap-3 lg:w-1/2 ">
           <FaSearch className="text-gray-700 text-xl" />
           <input
             type="search"
             name="search"
             placeholder="Job title, keywords, or company"
-            className="w-full p-4 placeholder:text-gray-600 outline-none text-gray-600 text-xl"
+            className={input_style}
           />
         </div>
-        <span className="flex justify-center items-center h-auto w-8">|</span>
+        <span className="flex justify-center items-center h-[1px] lg:w-[1px] w-full md:h-8 bg-gray-500"></span>
 
         {/* Location Input */}
         <div className="flex items-center gap-2 text-black md:w-1/2 h-full">
@@ -86,13 +89,13 @@ export default function SearchResultMain() {
             type="search"
             name="location"
             placeholder="London, Greater London"
-            className="w-full p-4 placeholder:text-gray-600 outline-none text-xl text-gray-600"
+            className={input_style}
           />
         </div>
 
         {/* Find Jobs Button */}
         <Link href="#">
-          <button className="bg-[#2557a7] text-white p-4 rounded-xl w-full md:w-28 font-bold">
+          <button className="bg-[#2557a7] text-white p-2 lg:p-4 gap-2 rounded-xl w-full lg:w-28 font-bold">
             Find Jobs
           </button>
         </Link>
@@ -171,9 +174,9 @@ const Joblists = () => {
   const [isTrendingOpen, setIsTrendingOpen] = useState(false);
   return (
     <div className="w-full text-black  flex-col items-center  flex justify-center mt-6">
-      <button className="bg-white w-fit h-auto flex items-center gap-4"  onClick={() => setIsTrendingOpen(!isTrendingOpen)}>
+      <button className="bg-white lg:w-full h-auto flex items-center gap-4 justify-center"  onClick={() => setIsTrendingOpen(!isTrendingOpen)}>
         <span
-          className="cursor-pointer text-l"
+          className="cursor-pointer lg:text-lg"
          
         >
           What's trending on Indeed
@@ -183,7 +186,7 @@ const Joblists = () => {
 
       {/* section list */}
       {isTrendingOpen && (
-        <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4  w-full p-14">
+        <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4  w-full lg:p-14 sm:p-8">
           {dataLists.map((section, index) => (
             <li key={index} className="text-black ">
               <h2 className="font-bold text-xl mb-3">{section.title}</h2>
@@ -191,7 +194,7 @@ const Joblists = () => {
                 {section.items.map((item, idx) => (
                   <li
                     key={idx}
-                    className="text-[#2557a7] cursor-pointer underline"
+                    className="text-[#2557a7] cursor-pointer underline lg:text-base sm:text-lg"
                   >
                     <Link
                       href={`/searchresult/${item

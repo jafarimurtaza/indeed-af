@@ -32,12 +32,12 @@ const footerLists = [
 
 export default function MainFooter() {
   return (
-    <div className="bg-white w-full text-black p-6 ">
+    <div className="bg-white w-full text-black p-6 px-4 py-6 ">
 
       {footerLists.map((lists ,index)=>(
-        <ul key={index} className="flex flex-wrap justify-start  gap-8 mb-6 mt-5">
+        <ul key={index} className="flex flex-wrap lg:justify-center gap-8 mt-5 sm:justify-start gap-x-6 gap-y-4 mb-6">
             {lists.items.map((item ,inx)=>(
-                    <li key={inx}>
+                    <li key={inx} className="text-sm sm:text-base">
               <Link
                 href={`/searchresult/${item.replace(/[\s,]+/g, "_").toLowerCase()}`}
                 className="text-normal hover:underline text-black"
