@@ -35,7 +35,7 @@ export default function MainFooter() {
     <div className="bg-white w-full text-black p-6 px-4 py-6 ">
 
       {footerLists.map((lists ,index)=>(
-        <ul key={index} className="flex flex-wrap lg:justify-center gap-8 mt-5 sm:justify-start gap-x-6 gap-y-4 mb-6">
+        <ul key={index} className="flex flex-wrap lg:justify-center gap-4 sm:gap-8 mt-5 sm:justify-start gap-x-6 gap-y-4 mb-6">
             {lists.items.map((item ,inx)=>(
                     <li key={inx} className="text-sm sm:text-base">
               <Link

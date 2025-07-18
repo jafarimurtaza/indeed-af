@@ -80,10 +80,12 @@ export default function SearchResultMain() {
             className={input_style}
           />
         </div>
-        <span className="flex justify-center items-center h-[1px] lg:w-[1px] w-full md:h-8 bg-gray-500"></span>
+        {/* <span className="flex justify-center items-center h-[1px] lg:w-[1px] w-full md:h-8 bg-gray-600"></span> */}
+        <span className="bg-gray-600 w-full h-[1px] md:h-8 md:w-[1px] flex just"></span>
+
 
         {/* Location Input */}
-        <div className="flex items-center gap-2 text-black md:w-1/2 h-full">
+        <div className="flex items-center gap-2 text-black lg:w-1/2 h-full">
           <FaMapMarkerAlt className="text-black text-lg" />
           <input
             type="search"
