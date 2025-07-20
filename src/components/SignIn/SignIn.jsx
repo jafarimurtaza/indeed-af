@@ -17,11 +17,11 @@ export default function SignIn() {
           href="#"
           className='flex justify-center my-4'>
           <Image
-           width={100}
-  height={64}
+            width={100}
+            height={64}
             src="/images/indeed-logo.png"
             alt="inddeed logo"
-             className='w-auto h-16'
+            className='w-auto h-16'
           />
         </Link>
         <div className='max-w-md w-full  p-5 border-1 bg-white border-gray-300 rounded-2xl '>
