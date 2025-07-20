@@ -8,10 +8,10 @@ export default function EmailInput() {
 
     const handleEmailChange = (e) => {
         setEmail(e.target.value)
-        setError("")
+        setError("");
     }
     const handleValidateEmail = () => {
-        if (email.length < 12) {
+        if (!email.includes("@") || !email.includes(".")) {
             setError("Error: Invalid email address")
         } else {
             setError("")
@@ -20,18 +20,20 @@ export default function EmailInput() {
     return (
         <div>
             <div className='space-y-2'>
-                <label className={`pl-1 text-black font-bold text-[12px] lg:text-base  leading-6
-                    ${error ? "text-[#A9252B]":""}`}>Email address <span className='text-[#A9252B]'>*</span></label>
+                <label className={`pl-1  font-bold text-[12px] lg:text-base  leading-6
+                    ${error ? "text-[#A9252B]" : "text-black"}`}>Email address <span className='text-[#A9252B]'>*</span></label>
                 <input
                     type='email'
                     name='gmail'
                     value={email}
                     onChange={handleEmailChange}
                     placeholder='Email address'
-                    className={`w-full text-gray-700 flex items-center justify-center gap-5 py-2 pl-2 border border-[#d4d2d0] rounded-lg outline hover:border-b-4 hover:border-[#3F73D3] transition-all duration-200 
-                             ${error ? "border-[#A9252B]" : ""}`}
+                    className={`w-full text-gray-700 flex items-center justify-center gap-5 py-2 pl-2 border rounded-lg outline hover:border-b-4  transition-all duration-200 
+                             ${error ? "border-[#A9252B]" : "hover:border-[#3F73D3] border-[#d4d2d0]"}`}
                 />
-                {error && <p className='text-[#A9252B]'>{error}</p>}
+                <p className={`text-[#A9252B] min-h-[20px] text-sm transition-opacity duration-200 ${error ? "opacity-100" : "opacity-0"}`}>
+                    {error || ""}
+                </p>
                 {/* continue-button */}
                 <button
                     onClick={handleValidateEmail}
