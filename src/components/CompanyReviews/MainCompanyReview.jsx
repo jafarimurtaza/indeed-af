@@ -3,7 +3,7 @@ import { FaSearch } from 'react-icons/fa';
 import Link from 'next/link';
 import Populer from './Populer';
 
-export default function MainCompany() {
+export default function MainCompanyReview() {
   return (
     <div className='min-h-screen flex justify-center items-start bg-white'>
       <div className="p-8 w-full max-w-3xl">
