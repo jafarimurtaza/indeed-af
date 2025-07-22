@@ -1,7 +1,7 @@
 import React from 'react'
 import { FaSearch } from 'react-icons/fa';
 import Link from 'next/link';
-import Populer from './Populer';
+import CardComponent from './CardComponent';
 
 export default function MainCompanyReview() {
   return (
@@ -26,7 +26,7 @@ export default function MainCompanyReview() {
             </div>
             <Link href="#" className='text-base text-[#003a9b] border-b'>Do you want to search for salaries</Link>
           </div>
-          <Populer />
+          <CardComponent />
         </div>
       </div>
     </div>
