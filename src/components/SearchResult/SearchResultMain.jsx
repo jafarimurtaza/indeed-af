@@ -4,7 +4,8 @@ import { MdKeyboardArrowDown } from "react-icons/md";
 import { FaArrowRight } from "react-icons/fa";
 import Link from "next/link";
 
-const input_style="w-full p-2 lg:p-4 placeholder:text-gray-600 outline-none text-gray-600 lg:text-xl text-sm";
+const input_style =
+  "w-full p-2 lg:p-4 placeholder:text-gray-600 outline-none text-gray-600 lg:text-xl text-sm";
 
 const dataLists = [
   {
@@ -67,41 +68,8 @@ const dataLists = [
 export default function SearchResultMain() {
   return (
     <div className="bg-white w-full h-auto flex flex-col  p-3 items-center">
-      {/* Search Section */}
-      <div className="w-full md:w-10/12 lg:w-8/12 h-auto border-1 my-6 border-black bg-white rounded-xl  
-      flex flex-col md:flex-row shadow-sm shadow-gray-900 p-2 lg:items-center lg:gap-4 gap-2">
-        {/* Search Input */}
-        <div className="flex items-center  w-full gap-3 lg:w-1/2 ">
-          <FaSearch className="text-gray-700 text-xl" />
-          <input
-            type="search"
-            name="search"
-            placeholder="Job title, keywords, or company"
-            className={input_style}
-          />
-        </div>
-        {/* <span className="flex justify-center items-center h-[1px] lg:w-[1px] w-full md:h-8 bg-gray-600"></span> */}
-        <span className="bg-gray-600 w-full h-[1px] md:h-8 md:w-[1px] flex just"></span>
+      <SearchInput />
 
-
-        {/* Location Input */}
-        <div className="flex items-center gap-2 text-black lg:w-1/2 h-full">
-          <FaMapMarkerAlt className="text-black text-lg" />
-          <input
-            type="search"
-            name="location"
-            placeholder="London, Greater London"
-            className={input_style}
-          />
-        </div>
-
-        {/* Find Jobs Button */}
-        <Link href="#">
-          <button className="bg-[#2557a7] text-white p-2 lg:p-4 gap-2 rounded-xl w-full lg:w-28 font-bold">
-            Find Jobs
-          </button>
-        </Link>
-      </div>
       {/* background section */}
       <div className="bg-white w-full flex justify-center items-center flex-col">
         <div className=" w-full flex justify-center mt-0 ">
@@ -176,14 +144,16 @@ const Joblists = () => {
   const [isTrendingOpen, setIsTrendingOpen] = useState(false);
   return (
     <div className="w-full text-black  flex-col items-center  flex justify-center mt-6">
-      <button className="bg-white lg:w-full h-auto flex items-center gap-4 justify-center"  onClick={() => setIsTrendingOpen(!isTrendingOpen)}>
-        <span
-          className="cursor-pointer lg:text-lg"
-         
-        >
+      <button
+        className="bg-white lg:w-full h-auto flex items-center gap-4 justify-center"
+        onClick={() => setIsTrendingOpen(!isTrendingOpen)}
+      >
+        <span className="cursor-pointer lg:text-lg">
           What's trending on Indeed
         </span>
-        <MdKeyboardArrowDown className={!isTrendingOpen ? 'rotate-180' : 'rotate-none'}/>
+        <MdKeyboardArrowDown
+          className={!isTrendingOpen ? "rotate-180" : "rotate-none"}
+        />
       </button>
 
       {/* section list */}
@@ -199,7 +169,7 @@ const Joblists = () => {
                     className="text-[#2557a7] cursor-pointer underline lg:text-base sm:text-lg"
                   >
                     <Link
-                      href={`/searchresult/${item
+                      href={`/job/${item
                         .replace(/[\s,]+/g, "_")
                         .toLowerCase()}`}
                     >
@@ -215,3 +185,46 @@ const Joblists = () => {
     </div>
   );
 };
+
+function SearchInput() {
+  return (
+    <div className="bg-white w-full h-auto flex flex-col  p-3 items-center">
+      {/* Search Section */}
+      <div
+        className="w-full md:w-10/12 lg:w-8/12 h-auto border-1 my-6 border-black bg-white rounded-xl  
+      flex flex-col lg:flex-row shadow-sm shadow-gray-900 p-2 lg:items-center lg:gap-4 gap-2"
+      >
+        {/* Search Input */}
+        <div className="flex items-center  w-full gap-3 lg:w-1/2 ">
+          <FaSearch className="text-gray-700 text-xl" />
+          <input
+            type="search"
+            name="search"
+            placeholder="Job title, keywords, or company"
+            className={input_style}
+          />
+        </div>
+        {/* <span className="flex justify-center items-center h-[1px] lg:w-[1px] w-full md:h-8 bg-gray-600"></span> */}
+        <span className="bg-gray-600 w-full h-[1px] md:h-8 md:w-[1px] flex just"></span>
+
+        {/* Location Input */}
+        <div className="flex items-center gap-2 text-black lg:w-1/2 h-full">
+          <FaMapMarkerAlt className="text-black text-lg" />
+          <input
+            type="search"
+            name="location"
+            placeholder="London, Greater London"
+            className={input_style}
+          />
+        </div>
+
+        {/* Find Jobs Button */}
+        <Link href="#">
+          <button className="bg-[#2557a7] text-white p-2 lg:p-4 gap-2 rounded-xl w-full lg:w-28 font-bold">
+            Find Jobs
+          </button>
+        </Link>
+      </div>
+    </div>
+  );
+}
