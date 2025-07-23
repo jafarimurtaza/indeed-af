@@ -1,5 +1,6 @@
 import Link from "next/link";
 import React from "react";
+
 const browseJob = [
   {
     title: "Company By letter",
@@ -167,7 +168,9 @@ export default function Main() {
             );
           })}
         </ul>
+     
       </main>
+     
     </div>
   );
 }

@@ -37,12 +37,28 @@ export default function Header() {
         </ul>
         <div className="flex items-center justify-end px-2 w-[18rem]">
           <ul className="flex gap-4 items-center">
+          <li className="relative">
+              <a
+                href="#"
+                className="block border-b-2 border-transparent hover:border-blue-600 text-black hover:text-black"
+              >
+                Upload Your CV
+              </a>
+            </li>
             <li className="relative">
               <a
                 href="#"
                 className="block border-b-2 border-transparent hover:border-blue-600 text-black hover:text-black"
               >
                 Sign in
+              </a>
+            </li>
+            <li className="relative">
+              <a
+                href="#"
+                className="block border-b-2 border-transparent hover:border-blue-600 text-black hover:text-black"
+              >
+              Open App
               </a>
             </li>
             <li>{/* <PiLineVerticalThin /> */}</li>
